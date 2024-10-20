@@ -1,10 +1,10 @@
 /*
-    Program name: hw1.css
+    Program name: hw2.css
     Name: Jean Mina
     Date created: 9/15/2024
-    Date last updated: 9/21/2024
+    Date last updated: 10/20/2024
     Version: 1.1
-    Purpose: Homework 1 CSS file
+    Purpose: Homework 2 CSS file
 */
 
 header {
@@ -100,4 +100,46 @@ p {
     text-align: right;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: normal;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: normal;
+}
+
+.pword-message {
+    text-align: right;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: normal;
+    position: relative;
+    left: 100px;
+    background: transparent;
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 20px;
+    color: red;
+}
+
+#review {
+    margin-top: 5px;
+}
+
+table.output,
+tr.output,
+td.output {
+    width: 500px;
+    background-color:rgba(3, 221, 214, 0.715);
+    padding: 10px;
+    border-spacing: 2px;
+    border-radius: 20px;
+    color:black;
+}
+
+td.output {
+    width: 500px;
+    background-color:rgba(3, 221, 214, 0.715);
+    padding: 10px;
+    border-spacing: 2px;
 }
