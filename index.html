@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <!--
-    Program name: hw1.html
+    Program name: hw2.html
     Name: Jean Mina
     Date created: 9/15/2024
-    Date last updated: 9/21/2024
+    Date last updated: 10/18/2024
     Version: 1.1
-    Purpose: Homework 1 HTML form
+    Purpose: Homework 2 HTML form
 -->
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="hw1.css"><!-- links to css file-->
+        <link rel="stylesheet" href="hw2.css"><!-- links to css file-->
         
         <!-- displays texts in the brower's tab-->
         <title>New Patient Registration | Mina Therapy Clinic</title>
@@ -40,7 +40,7 @@
 
         <h2></h2>
 
-        <form action="thankyou.html">
+        <form name="signup" id="signup" action="thankyou.html">
             <center>
                 <div class="format">
                     <table>
@@ -58,9 +58,14 @@
                                 id="fname"
                                 maxlength="30"
                                 required
-                                title="Enter your first name"
+                                title="Letters, apostrophes, and dashes only."
+                                pattern="[a-zA-Z']{1,30}"
+                                onblur="validateFname()"
                                 placeholder="Jean"
                                 />
+
+                            </br>
+                            <span class="error" id="fname-error"></span>
                             </td>
                         </tr>
 
@@ -73,9 +78,13 @@
                                 id="mini"
                                 maxlength="1"
                                 required
-                                title="Enter your middle initial"
+                                title="Letters only."
+                                pattern="[a-zA-Z']{0,1}"
+                                onblur="validateMini()"
                                 placeholder="J"
                                 />
+                            </br>
+                            <span class="error" id="mini-error"></span>
                             </td>
                         </tr>
 
@@ -88,9 +97,13 @@
                                 id="lname"
                                 maxlength="30"
                                 required
-                                title="Enter your last name"
+                                title="Letters, apostrophes, and dashes only."
+                                pattern="[a-zA-Z']{1,30}"
+                                onblur="validateLname()"
                                 placeholder="Mina"
                                 />
+                            </br>
+                            <span class="error" id="lname-error"></span>
                             </td>
                         </tr>
 
@@ -130,7 +143,11 @@
                                 type="date"
                                 id="dob"
                                 name="dob"
+                                onblur="validateDob()"
+                                required
                                 />
+                            </br>
+                            <span class="error" id="dob-error"></span>
                             </td>
                         </tr>
 
@@ -144,9 +161,12 @@
                                     name="ssn"
                                     id="ssn"
                                     required
-                                    title="Please enter your social security number"
+                                    title="Numbers only"
                                     placeholder="123-45-6789"
+                                    onblur="validateSsn()"
                                     />
+                                </br>
+                                <span class="error" id="ssn-error"></span>
                                 </td>
                        </tr>
 
@@ -169,7 +189,10 @@
                             required
                             title="Enter your address"
                             placeholder="123 Sesame St."
+                            onblur="validateAddress1()"
                             />
+                        </br>
+                        <span class="error" id="address1-error"></span>
                         </td>
                     </tr>
 
@@ -273,9 +296,12 @@
                             pattern="[0-9]{5}"
                             maxlength="5"
                             required
-                            title="Enter your zip code"
+                            title="Numbers only."
                             placeholder="77004"
+                            onblur="validateZcode()"
                             />
+                        </br>
+                        <span class="error" id="zcode-error"></span>
                         </td>
                     </tr>
 
@@ -289,23 +315,30 @@
                             required
                             title="Enter your email address"
                             placeholder="jamina@cougarnet.uh.edu"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
+                            onblur="validateEmail()"
                             />
+                        </br>
+                        <span class="error" id="email-error"></span>
                         </td>
                     </tr>
 
                     <tr>
-                        <td class="td1"><label for="phone">Phone Number:</label></td>
+                        <td class="td1"><label for="phnum">Phone Number:</label></td>
                         <td>
                             <input
                             type="text"
-                            name="phone"
-                            id="phone"
+                            name="phnum"
+                            id="phnum"
                             pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                             maxlength="30"
                             required
                             title="Enter your phone number"
                             placeholder="123-456-789"
+                            onblur="validatePhone()"
                             />
+                        </br>
+                        <span class="error" id="phnum-error"></span>
                         </td>
                     </tr>
 
@@ -393,43 +426,57 @@
                             type="text"
                             name="uname"
                             id="uname"
+                            minlength="5"
                             maxlength="15"
                             required
-                            title="Enter a username"
+                            title="Username must contain at least 5 characters. Cannot start with a number."
                             placeholder="jzhhon"
+                            onblur="validateUname()"
                             />
+                        </br>
+                        <span class="error" id="uname-error"></span>
                         </td>
                     </tr>
 
                     <tr>
-                        <td class="td1"><label for="pname">Password:</label></td>
+                        <td class="td1"><label for="pword">Password:</label></td>
                         <td>
                             <input
                             type="password"
-                            name="pname"
-                            id="pname"
+                            name="pword"
+                            id="pword"
                             minlength="10"
                             maxlength="30"
                             required
-                            title="Enter a password"
+                            title="Password must contain at least 10 characters, one uppercase letter, one lowercase letter, one number, and one special character."
                             placeholder="Required"
+                            onblur="validatePassword()"
+                            oninput="validatePassword()"
+                            onfocus="validatePassword()"
                             />
+                        </br>
+                        <span class="error" id="pword-error"></span>
                         </td>
                     </tr>
 
                     <tr>
-                        <td class="td1"><label for="con_pname">Confirm Password:</label></td>
+                        <td class="td1"><label for="con_pword">Confirm Password:</label></td>
                         <td>
                             <input
                             type="password"
-                            name="con_pname"
-                            id="con_pname"
+                            name="con_pword"
+                            id="con_pword"
                             minlength="10"
                             maxlength="30"
                             required
                             title="Confirm your password"
                             placeholder="Required"
+                            onblur="confirmPassword()"
+                            oninput="confirmPassword()"
+                            onfocus="confirmPassword()"
                             />
+                        </br>
+                        <span class="error" id="Pword2-error"></span>
                         </td>
                     </tr>
 
@@ -439,18 +486,34 @@
                                 <input type="submit" name="submit" id="submit" style="font-family: 'optima', sans-serif;">
                                 &nbsp;&nbsp;&nbsp;
                                 <input type="reset" name="reset" id="reset" style="font-family: 'optima', sans-serif;">
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="button" name="review" id="review" value="Review" style="font-family: 'optima', sans-serif;" onclick="reviewInput()">
                             </center>
                         </td>
                     </tr>
                    </table>
                  </div>
-          </center>
+            <div class="pword-message">
+                <span id="msg1"></span> <br/>
+                <span id="msg2"></span> <br/>
+                <span id="msg3"></span> <br/>
+                <span id="msg4"></span> <br/>
+                <span id="msg5"></span> <br/>
+                <span id="msg6"></span> <br/>
+                <span id="msg7"></span> <br/>
+                <span id="pword2-error"></span> <br/>
+                </div>
+                    <center>
+                        <p id="showInput"></p>
+                    </center>
+                </div>
+                </center>
         </form>
         <!--footer that contains website link-->
         <footer>
             <p id="footer"> &#169 2024 Mina Therapy Clinic | <a href="https://www.nimh.nih.gov/health/topics/psychotherapies" target="_blank" rel="noopener noreferrer"> Contact Us!</a></p>
         </footer>
 
-        <script src="hw1.js"></script>
+        <script src="hw2.js"></script>
     </body>
 </html>
