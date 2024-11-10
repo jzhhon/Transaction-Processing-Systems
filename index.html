@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <!--
-    Program name: hw2.html
+    Program name: hw3.html
     Name: Jean Mina
     Date created: 9/15/2024
-    Date last updated: 10/18/2024
+    Date last updated: 11/9/2024
     Version: 1.1
-    Purpose: Homework 2 HTML form
+    Purpose: Homework 3 HTML form
 -->
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="hw2.css"><!-- links to css file-->
+        <link rel="stylesheet" href="hw3.css"><!-- links to css file-->
         
         <!-- displays texts in the brower's tab-->
         <title>New Patient Registration | Mina Therapy Clinic</title>
@@ -152,7 +152,7 @@
                         </tr>
 
                         <tr>
-                            <td class="td1"><label for="ssn">SSN:</td>
+                            <td class="td1"><label for="ssn">SSN:</label></td>
                                 <td>
                                     <input
                                     type="password"
@@ -222,7 +222,10 @@
                             required
                             title="Enter your city"
                             placeholder="Houston"
+                            onblur="validateCity()"
                             />
+                        </br>
+                        <span class="error" id="city-error"></span>
                         </td>
                     </tr>
 
@@ -291,7 +294,7 @@
                         <td>
                             <input
                             type="text"
-                            name="zcpde"
+                            name="zcode"
                             id="zcode"
                             pattern="[0-9]{5}"
                             maxlength="5"
@@ -476,7 +479,7 @@
                             onfocus="confirmPassword()"
                             />
                         </br>
-                        <span class="error" id="Pword2-error"></span>
+                        <span class="error" id="pword2-error"></span>
                         </td>
                     </tr>
 
@@ -487,7 +490,9 @@
                                 &nbsp;&nbsp;&nbsp;
                                 <input type="reset" name="reset" id="reset" style="font-family: 'optima', sans-serif;">
                                 &nbsp;&nbsp;&nbsp;
-                                <input type="button" name="review" id="review" value="Review" style="font-family: 'optima', sans-serif;" onclick="reviewInput()">
+                                <input type="button" name="review" id="review" value="Review" onclick="reviewInput()" style="font-family: 'optima', sans-serif;" />
+                                &nbsp;&nbsp;&nbsp;
+                                <input type="button" name="validate" id="validate" value="Validate" onclick="validateEverything()" style="font-family: 'optima', sans-serif;" />
                             </center>
                         </td>
                     </tr>
@@ -511,9 +516,18 @@
         </form>
         <!--footer that contains website link-->
         <footer>
-            <p id="footer"> &#169 2024 Mina Therapy Clinic | <a href="https://www.nimh.nih.gov/health/topics/psychotherapies" target="_blank" rel="noopener noreferrer"> Contact Us!</a></p>
+            <p id="footer"> &copy; 2024 Mina Therapy Clinic | <a href="https://www.nimh.nih.gov/health/topics/psychotherapies" target="_blank" rel="noopener noreferrer"> Contact Us!</a></p>
         </footer>
 
-        <script src="hw2.js"></script>
+        <script src="hw3.js"></script>
+
+        <!--inserts alert box into form when necessary -->
+        <div id="alert-box">
+            <div id="alert-content">
+                <h4>Please fill out all required information.</h4>
+                <button id="close-alert">OK</button>
+            </div>
+        </div>
+
     </body>
 </html>
