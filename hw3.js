@@ -1,10 +1,10 @@
 /*
-    Program name: hw2.js
+    Program name: hw3.js
     Name: Jean Mina
     Date created: 9/15/2024
-    Date last updated: 10/18/2024
+    Date last updated: 11/9/2024
     Version: 1.1
-    Purpose: Homework 2 js
+    Purpose: Homework 3 js
 */
 
 //dynamic date js code
@@ -20,6 +20,76 @@ let slider = document.getElementById("range")
 
     slider.oninput = function () {output.innerHTML = this.value};
 
+//first name validate js code
+function validateFname(){
+    let fname = document.getElementById("fname").value.trim();
+    var namePattern = /^[a-zA-Z'-]+$/;
+    //checks if first name field is empty
+    if (fname == "") {
+        document.getElementById("fname-error").innerHTML = "First name field cannot be empty.";
+        return false;
+    } else if (fname != "") {
+        if (!fname.match(namePattern)) { //checks if first name matches pattern
+        document.getElementById("fname-error").innerHTML = "Letters, apostrophes, and dashes only.";
+        return false;
+    } else if (fname.length < 2) { //checks if name is at least 1 character
+        document.getElementById("fname-error").innerHTML = "First name cannot be less than 2 characters.";
+        return false;
+    } else if (fname.length > 30) { //checks if name is at more than 30 characters
+        document.getElementById("fname-error").innerHTML = "First name cannot be more than 30 characters.";
+        return false;
+    } else {
+        document.getElementById("fname-error").innerHTML = "";
+        return true;
+    }
+}
+}
+
+//middle initial validate js code
+function validateMini() {
+    let mini = document.getElementById("mini").value;
+    const namePattern = /^[A-Z]$/;
+
+    
+    //makes middle initial uppercase
+    mini = mini.toUpperCase();
+    document.getElementById("mini").value = mini;
+
+    //checks that middle initial is exactly one uppercase letter
+    if (!mini.match(namePattern)) {
+        document.getElementById("mini-error").innerHTML = "Middle initial must be a single uppercase letter.";
+        return false;
+    } else {
+        document.getElementById("mini-error").innerHTML = "";
+        return true;
+    }
+}
+
+//last name validate js code
+function validateLname(){
+    lname = document.getElementById("lname").value.trim();
+    var namePattern = /^[a-zA-Z'-]+$/;
+    //checks if last name field is empty
+    if (lname == "") {
+        document.getElementById("lname-error").innerHTML = "Last name field cannot be empty.";
+        return false;
+    } else if (lname != "") {
+        if (!lname.match(namePattern)) { //checks if last name matches pattern
+        document.getElementById("lname-error").innerHTML = "Letters, apostrophes, and dashes only.";
+        return false;
+    } else if (lname.length < 2) { //checks if name is at least 1 character
+        document.getElementById("lname-error").innerHTML = "Last name cannot be less than 2 characters.";
+        return false;
+    } else if (lname.length > 30) { //checks if name is at more than 30 characters
+        document.getElementById("lname-error").innerHTML = "Last name cannot be more than 30 characters.";
+        return false;
+    } else {
+        document.getElementById("lname-error").innerHTML = "";
+        return true;
+    }
+}
+}
+
     // dob validation js code
 function validateDob() {
     dob=document.getElementById("dob");
@@ -27,7 +97,7 @@ function validateDob() {
     let maxDate = new Date().setFullYear(new Date().getFullYear() - 120);
 
     if (date > new Date()) {
-        document.getElementById("dob-error").innerHTML = "Date cannot be in the future."
+        document.getElementById("dob-error").innerHTML = "Date cannot be in the future.";
         dob.value="";
         return false;
     } else if (date < new Date(maxDate)){
@@ -71,6 +141,19 @@ function validateAddress1() {
         return false;
     } else {
         document.getElementById("address1-error").innerHTML = "";
+        return true;
+    }
+}
+
+// city validate js code
+function validateCity() {
+    city = document.getElementById("city").value.trim();
+
+    if (!city) {
+        document.getElementById("city-error").innerHTML = "City cannot be left blank.";
+        return false;
+    } else {
+        document.getElementById("city-error").innerHTML = "";
         return true;
     }
 }
@@ -214,6 +297,7 @@ function validatePassword() {
    errorContainer.innerHTML = errorMessage
    .map((message) => `<span>${message}</span><br/>`)
    .join("");
+   
 }
 
 //confirm password validation js code
@@ -244,13 +328,13 @@ function reviewInput() {
             switch (datatype) {
                 case "checkbox":
                     if (formcontent.elements[i].checked) {
-                        formoutput = formoutput + "<tr> <td align= 'right'>" + formcontent.element[i].name + "</td>";
+                        formoutput = formoutput + "<tr> <td align= 'right'>" + formcontent.elements[i].name + "</td>";
                         formoutput = formoutput + "<td class='outputdata'>&#x2713;</td></tr>";
                     }
                     break;
                 case "radio":
                     if (formcontent.elements[i].checked) {
-                        formoutput = formoutput + "<tr> <td align='right'" + formcontent.element[i].name +"</td>";
+                        formoutput = formoutput + "<tr> <td align='right'" + formcontent.elements[i].name +"</td>";
                         formoutput = "<td class ='outputdata'>" + formcontent.element[i].value + "</td></tr>";
                     }
                     break;
@@ -274,4 +358,65 @@ function reviewInput() {
 //remove user input
 function removeReview() {
     document.getElementById("showInput").innerHTML ="";
+}
+
+//shows alert box when necessary js code
+function showAlert() {
+    var alertBox = document.getElementById("alert-box");
+    var closeAlert = document.getElementById("close-alert");
+
+    alertBox.style.display = "block";
+    closeAlert.onclick = function () {
+        alertBox.style.display = "none";
+    }
+}
+
+// validate everything on form
+function validateEverything() {
+    let valid = true;
+
+    if (!validateFname()) {
+        valid = false;
+    }
+    if (!validateMini()) {
+        valid = false;
+    }
+    if (!validateLname()) {
+        valid = false;
+    }
+    if (!validateDob()) {
+        valid = false;
+    }
+    if (!validateSsn()) {
+        valid = false;
+    }
+    if (!validateAddress1()) {
+        valid = false;
+    }
+    if (!validateCity()) {
+        valid = false;
+    }
+    if (!validateZcode()) {
+        valid = false;
+    }
+    if (!validateEmail()) {
+        valid = false;
+    }
+    if (!validatePhone()) {
+        valid = false;
+    }
+    if (!validateUname()) {
+        valid = false;
+    }
+    if (!validatePassword()) {
+        valid = false;
+    }
+    if (!confirmPassword()) {
+        valid = false;
+    }
+    if (valid) {
+        document.getElementById("submit").disabled = false;
+    } else {
+        showAlert();
+    }
 }
