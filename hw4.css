@@ -1,16 +1,24 @@
 /*
-    Program name: hw3.css
+    Program name: hw4.css
     Name: Jean Mina
     Date created: 9/15/2024
-    Date last updated: 11/9/2024
+    Date last updated: 12/04/2024
     Version: 1.1
     Purpose: Homework 3 CSS file
 */
 
 header {
+    position: sticky;
+    top: 0;
     width: 100%;
     background-color:rgba(3, 221, 214, 0.715);
+    transition: background-color 0.4 easy-in-out;
+    z-index: 1000;
+}
 
+header.scrolled {
+    background-color:rgba(3, 221, 214, 0.715);
+    opacity: 1.0;
 }
 
 body {
@@ -189,6 +197,39 @@ td.outputdata {
     cursor: pointer;
 
     margin-top: 20px;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: normal;
+}
+
+/*iframe styling */
+.iframe-container {
+    position: absolute;
+    top: 25%;
+    right: 15px;
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.iframe-container iframe {
+    width: 95%;
+    height: 20%;
+    border: 1px solid black;
+}
+
+#welcome1 {
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: normal;
+}
+
+#welcome2 {
+    margin-top: 20px;
+    font-size: 20px;
     text-align: center;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: normal;
