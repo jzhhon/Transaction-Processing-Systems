@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <!--
-    Program name: hw3.html
+    Program name: hw4.html
     Name: Jean Mina
     Date created: 9/15/2024
-    Date last updated: 11/9/2024
+    Date last updated: 12/4/2024
     Version: 1.1
-    Purpose: Homework 3 HTML form
+    Purpose: Homework 4 HTML form
 -->
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="hw3.css"><!-- links to css file-->
+        <link rel="stylesheet" href="hw4.css"><!-- links to css file-->
         
         <!-- displays texts in the brower's tab-->
         <title>New Patient Registration | Mina Therapy Clinic</title>
@@ -17,7 +17,7 @@
     <body>
         <header>
             <table width="100%">
-            <tr>
+            </tr>
                 <td valign="top" align="left" width="20%">
                     <div class="image">
                         <img align="center" src="therapylogo.png" alt="Mina Therapy Clinic Logo" width="70px" id="logo"/>
@@ -28,14 +28,26 @@
                     <h2>Mina Therapy Clinic</h2>
                 </td>
 
-                <td valign="botton" align="right" width="20%">
+                <td valign="bottom" align="right" width="20%">
                     <p>Today's Date: <span id="today"></span></p>
                 </td>
 
-            <tr>
+            </tr>
             </table>
         </header>
 <hr>
+
+<!--inserts welcome message to user (cookie)-->
+
+<center>
+    <span id="welcome1"></span>
+    <span id="welcome2"></span>
+</center>
+
+<!--iframe thing that looks like an ad-->
+<div class="iframe-container">
+    <iframe class="frame" src="https://www.houstonhumane.org/" frameborder="0"></iframe>
+</div>
 <!--form starts here-->
 
         <h2></h2>
@@ -44,12 +56,12 @@
             <center>
                 <div class="format">
                     <table>
-                        <tr>
+                    </tr>
                             <th colspan="4">Create Patient Portal Account</th>
                         </tr>
                         <!-- patient's information section of form begins here-->
 
-                        <tr>
+                    </tr>
                             <td class="td1"><label for="fname">First Name:</label></td>
                             <td>
                                 <input
@@ -59,7 +71,7 @@
                                 maxlength="30"
                                 required
                                 title="Letters, apostrophes, and dashes only."
-                                pattern="[a-zA-Z']{1,30}"
+                                pattern="[a-zA-Z'-\s]{1,30}"
                                 onblur="validateFname()"
                                 placeholder="Jean"
                                 />
@@ -69,7 +81,7 @@
                             </td>
                         </tr>
 
-                        <tr>
+                    </tr>
                             <td class="td1"><label for="mini">Middle Initial:</label></td>
                             <td>
                                 <input
@@ -88,7 +100,7 @@
                             </td>
                         </tr>
 
-                        <tr>
+                    </tr>
                             <td class="td1"><label for="lname">Last Name:</label></td>
                             <td>
                                 <input
@@ -107,7 +119,7 @@
                             </td>
                         </tr>
 
-                        <tr>
+                    </tr>
                             <td class="td1"><label for="psex">Patient's Sex</label></td>
                             <td>
                                 <input
@@ -136,7 +148,7 @@
                             </td>
                         </tr>
 
-                        <tr>
+                    </tr>
                             <td class="td1"><label for="dob">Date of Birth:</label></td>
                             <td>
                                 <input
@@ -151,7 +163,7 @@
                             </td>
                         </tr>
 
-                        <tr>
+                    </tr>
                             <td class="td1"><label for="ssn">SSN:</label></td>
                                 <td>
                                     <input
@@ -170,15 +182,15 @@
                                 </td>
                        </tr>
 
-                       <tr>
+                    </tr>
                             <th colspan="4"><hr></th> <!--  line divider -->
                        </tr>
 
-                       <tr>
+                    </tr>
                             <th colspan="4">Patient's Contact Information</th>
                        </tr>
 
-                       <tr>
+                    </tr>
                         <td class="td1"><label for="address 1">Address:</label></td>
                         <td>
                             <input
@@ -196,7 +208,7 @@
                         </td>
                     </tr>
 
-                    <tr>
+                </tr>
                         <td class="td1"><label for="address 2">Address continued:</label></td>
                         <td>
                             <input
@@ -211,7 +223,7 @@
                         </td>
                     </tr>
 
-                    <tr>
+                </tr>
                         <td class="td1"><label for="city">City:</label></td>
                         <td>
                             <input
@@ -229,7 +241,7 @@
                         </td>
                     </tr>
 
-                    <tr>
+                </tr>
                         <td class="td1"> <label for="state">State:</label></td>
                         <td>
                         <select>
@@ -289,7 +301,7 @@
                         </select>
                     </tr>
 
-                    <tr>
+                </tr>
                         <td class="td1"><label for="zcode">Zip Code:</label></td>
                         <td>
                             <input
@@ -308,7 +320,7 @@
                         </td>
                     </tr>
 
-                    <tr>
+                </tr>
                         <td class="td1"><label for="email">Email Address:</label></td>
                         <td>
                             <input
@@ -326,7 +338,7 @@
                         </td>
                     </tr>
 
-                    <tr>
+                </tr>
                         <td class="td1"><label for="phnum">Phone Number:</label></td>
                         <td>
                             <input
@@ -337,7 +349,7 @@
                             maxlength="30"
                             required
                             title="Enter your phone number"
-                            placeholder="123-456-789"
+                            placeholder="123-456-7890"
                             onblur="validatePhone()"
                             />
                         </br>
@@ -345,16 +357,16 @@
                         </td>
                     </tr>
 
-                    <tr>
+                </tr>
                         <th colspan="4"><hr></th> <!--  line divider -->
                     </tr>
 
                     <!--patient history section of the form-->
-                    <tr>
+                </tr>
                         <th colspan="4">Patient's History</th>
                     </tr>
 
-                    <tr>
+                </tr>
                         <td class="td1"><label for="pat_hist">Have you ever had/are you <br> currently experiencing?</label></td>
                         <td>
                             <input type="checkbox" id="option1" value="Depression"/>
@@ -378,7 +390,7 @@
                         </td>
                     </tr>
 
-                    <tr>
+                </tr>
                         <td class="td1" align="right">
                             <label for="notes">If you selected any of the above, <br> please explain:</label>
                         </td>
@@ -397,7 +409,7 @@
                     </tr>
 
                     <!--html for range slider-->
-                    <tr>
+                </tr>
                         <td class="td1"><label for="range">Urgency of Appointment? <br/>(Rate from 1 to 10)</label></td>
                         <td>
                             <input
@@ -412,17 +424,17 @@
                         </td>
                     </tr>
 
-                    <tr>
+                </tr>
                         <th colspan="4"></th>
                     </tr>
 
                     <!--account information section begins here-->
 
-                    <tr>
+                </tr>
                         <th colspan="4">Finish Patient Portal Account:</th>
                     </tr>
 
-                    <tr>
+                </tr>
                         <td class="td1"><label for="uname">Username:</label></td>
                         <td>
                             <input
@@ -441,7 +453,7 @@
                         </td>
                     </tr>
 
-                    <tr>
+                </tr>
                         <td class="td1"><label for="pword">Password:</label></td>
                         <td>
                             <input
@@ -462,7 +474,7 @@
                         </td>
                     </tr>
 
-                    <tr>
+                </tr>
                         <td class="td1"><label for="con_pword">Confirm Password:</label></td>
                         <td>
                             <input
@@ -483,7 +495,7 @@
                         </td>
                     </tr>
 
-                    <tr>
+                </tr>
                         <td class="td1" colspan="4">
                             <center>
                                 <input type="submit" name="submit" id="submit" style="font-family: 'optima', sans-serif;">
@@ -514,12 +526,10 @@
                 </div>
                 </center>
         </form>
-        <!--footer that contains website link-->
-        <footer>
-            <p id="footer"> &copy; 2024 Mina Therapy Clinic | <a href="https://www.nimh.nih.gov/health/topics/psychotherapies" target="_blank" rel="noopener noreferrer"> Contact Us!</a></p>
-        </footer>
+        <!--iframe footer that contains website link-->
+        <iframe src="footer.html" width="100%" height="100px" title="footer" ></iframe>
 
-        <script src="hw3.js"></script>
+        <script src="hw4.js"></script>
 
         <!--inserts alert box into form when necessary -->
         <div id="alert-box">
