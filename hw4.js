@@ -3,7 +3,7 @@
     Name: Jean Mina
     Date created: 9/15/2024
     Date last updated: 12/4/2024
-    Version: 1.1
+    Version: 1.1 
     Purpose: Homework 4 js
 */
 
