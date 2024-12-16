@@ -3,45 +3,51 @@
     Program name: thankyou.html
     Name: Jean Mina
     Date created: 9/15/2024
-    Date last updated: 12/15/2024
-    Version: 1.2
-    Purpose: Thank You Page for Homework 4
+    Date last updated: 9/21/2024
+    Version: 1.1
+    Purpose: Homework 1 HTML form
 -->
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="hw4.css">
-    <title>Thank You | Mina Therapy Clinic</title>
-</head>
-<body>
-    <header>
-        <table width="100%">
+    <head>
+        <link rel=""stylesheet" href=""hw4.css"><!-- links to css file-->
+        
+        <!-- displays texts in the brower's tab-->
+        <title> Thank You! | Mina Therapy Clinic</title>
+    </head>
+    <body>
+        <header>
+            <table width="100%">
             <tr>
-                <td align="left" width="20%">
-                    <img src="therapylogo.png" alt="Mina Therapy Clinic Logo" width="70px" id="logo"/>
+                <td valign="top" align="left" width="20%">
+                    <div class="image">
+                        <img align="center" src="therapylogo.png" alt="Mina Therapy Clinic Logo" width="70px" id="logo"/>
+                    </div>
                 </td>
+
                 <td>
                     <h2>Mina Therapy Clinic</h2>
                 </td>
-                <td align="right" width="20%">
-                    <p>Today's Date: <span id="today"></span></p>
+
+                <td valign="botton" align="right" width="20%">
+                    Today's Date: <span id="today"></span>
                 </td>
-            </tr>
-        </table>
-    </header>
-    <hr>
-    <main>
-        <h1>Thank You for Creating Your Account!</h1>
-        <p>Your information has been submitted successfully.</p>
-    </main>
-    <footer>
-        <p id="footer">
-            &copy; 2024 Mina Therapy Clinic |
-            <a href="https://www.nimh.nih.gov/health/topics/psychotherapies" target="_blank" rel="noopener noreferrer">Contact Us!</a>
-        </p>
-    </footer>
-    <script>
-        const d = new Date();
-        document.getElementById("today").innerHTML = d.toLocaleDateString();
-    </script>
-</body>
+
+            <tr>
+            </table>
+        </header>
+<hr>
+<!-- thank you message begins here -->
+<br>
+<main>
+    <h1> THANK YOU FOR CREATING YOUR ACCOUNT! </h1>
+</main>
+
+
+        <!--footer that contains website link-->
+        <footer>
+            <p id="footer"> &#169 2024 Mina Therapy Clinic | <a href="insert.link.here" target="_blank" rel="noopener noreferrer"> Contact Us!</a></p>
+        </footer>
+
+        <script src="hw4.js"></script>
+    </body>
 </html>
