@@ -297,6 +297,8 @@ function validatePassword() {
    errorContainer.innerHTML = errorMessage
    .map((message) => `<span>${message}</span><br/>`)
    .join("");
+
+    return errorMessage.length === 0; // Return true if there are no errors
    
 }
 
@@ -334,8 +336,8 @@ function reviewInput() {
                     break;
                 case "radio":
                     if (formcontent.elements[i].checked) {
-                        formoutput = formoutput + "<tr> <td align='right'" + formcontent.elements[i].name +"</td>";
-                        formoutput = "<td class ='outputdata'>" + formcontent.element[i].value + "</td></tr>";
+                        formoutput += "<tr> <td align='right'>" + formcontent.elements[i].name + "</td>";
+                        formoutput += "<td class='outputdata'>" + formcontent.elements[i].value + "</td></tr>";
                     }
                     break;
                 case "button":
@@ -424,7 +426,7 @@ function validateEverything() {
 //cookie for remembering info input on form//
 function setCookie (name, cvalue, expiryDays) {
     var day = new Date();
-    day.setTime(day.getTime( + expiryDays*24*60*60*1000));
+    day.setTime(day.getTime() + expiryDays * 24 * 60 * 60 * 1000);
     var expires = "expires=" + day.toUTCString();
     document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
 }
@@ -482,10 +484,11 @@ if (firstName !== " ") {
     document.getElementById("welcome2").innerHTML = 
     "<a href='#' id='new-user'>Not " + firstName + "? Click here to start a new form. </a>";
 
-    document.getElementById("new-user").addEventListener = ("click", function() {
+      document.getElementById("new-user").addEventListener("click", function() {
         inputs.forEach(function(input) {
             setCookie(input.cookieName, "", -1);
-        })
+        });
         location.reload();
-    })
+    });
+
 }
