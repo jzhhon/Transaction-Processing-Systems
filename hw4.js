@@ -199,7 +199,3 @@ function validatePhone() {
     document.getElementById("phnum-error").innerHTML = "";
     return true;
 }
-
-// Review button functionality remains unchanged
-
-// Minor fixes: Corrected regex, ensured empty string checks, and removed typos in listener assignments.
