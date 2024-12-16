@@ -2,21 +2,10 @@
     Program name: hw4.css
     Name: Jean Mina
     Date created: 9/15/2024
-    Date last updated: 12/4/2024
-    Version: 1.1
-    Purpose: Homework 4 CSS file
+    Date last updated: 12/15/2024
+    Version: 1.2
+    Purpose: Homework 4 CSS
 */
-
-/* General Styling */
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgba(145, 205, 235, 0.72);
-    margin: 0;
-    height: 100%;
-    min-height: 100vh;
-}
 
 header {
     position: sticky;
@@ -24,41 +13,24 @@ header {
     width: 100%;
     background-color: rgba(3, 221, 214, 0.715);
     z-index: 1000;
-    transition: background-color 0.4s ease-in-out;
 }
 
-header.scrolled {
-    background-color: rgba(3, 221, 214, 1);
-    opacity: 1;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(145, 205, 235, 0.72);
+    margin: 0;
+    height: 100%;
 }
 
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(3, 221, 214, 0.715);
-    height: 3rem;
-}
-
-#footer {
-    text-align: right;
-    font-family: 'Trebuchet MS', Arial, sans-serif;
-    font-weight: normal;
-    margin-right: 10px;
-}
-
-/* Text Styling */
 h1, h2 {
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-label {
-    font-family: 'Trebuchet MS', Arial, sans-serif;
-    font-weight: normal;
-}
-
-input, textarea, select {
+.td1, label {
+    text-align: right;
     font-family: 'Trebuchet MS', Arial, sans-serif;
     font-weight: normal;
 }
@@ -69,65 +41,21 @@ input, textarea, select {
     font-family: 'Trebuchet MS', Arial, sans-serif;
 }
 
-/* Form Styling */
-form {
-    flex-grow: 1;
+.pword-message {
+    color: red;
+    padding: 10px;
+    border-spacing: 2px;
 }
 
-.format {
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-table {
-    width: 100%;
-    border-spacing: 15px;
-}
-
-th {
-    font-family: 'Trebuchet MS', Arial, sans-serif;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Alert Box Styling */
-#alert-box {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(133, 163, 215, 0.715);
-}
-
-#alert-content {
-    background-color: white;
-    border-radius: 10px;
-    width: 300px;
-    height: 135px;
-    margin: auto;
-    margin-top: 20%;
-    padding: 30px;
-    text-align: center;
-}
-
-/* iframe Styling */
-.iframe-container {
-    position: absolute;
-    top: 25%;
-    right: 15px;
-    width: 25%;
-    height: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-}
-
-.iframe-container iframe {
-    width: 95%;
-    height: 20%;
+iframe {
     border: 1px solid black;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(3, 221, 214, 0.715);
+    text-align: right;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
 }
